@@ -25,6 +25,21 @@ const headerVideo = document.querySelector('.header-video');
 const videoPopup = document.getElementById('videoPopup');
 const videoPopupPlayer = document.getElementById('videoPopupPlayer');
 const popupCloseTriggers = document.querySelectorAll('[data-close-video-popup]');
+const isTouchLikeDevice = window.matchMedia('(hover: none), (pointer: coarse)').matches;
+let activeTouchPreviewItem = null;
+
+function tryPlayHeaderVideo() {
+   if (!headerVideo) return;
+
+   headerVideo.muted = true;
+   headerVideo.defaultMuted = true;
+   headerVideo.setAttribute('playsinline', '');
+   headerVideo.setAttribute('webkit-playsinline', 'true');
+
+   headerVideo.play().catch(() => {
+      // Mobile browsers may still wait for a user gesture.
+   });
+}
 
 function openVideoPopup() {
    if (!videoPopup || !videoPopupPlayer) return;
@@ -95,6 +110,20 @@ if (mainHeader) {
       if (event.target.closest('.header-contact-btn')) return;
       openVideoPopup();
    });
+}
+
+if (headerVideo) {
+   window.addEventListener('load', () => {
+      setTimeout(tryPlayHeaderVideo, 120);
+   });
+
+   document.addEventListener('visibilitychange', () => {
+      if (!document.hidden) {
+         tryPlayHeaderVideo();
+      }
+   });
+
+   document.addEventListener('touchstart', tryPlayHeaderVideo, { once: true, passive: true });
 }
 
 popupCloseTriggers.forEach((element) => {
@@ -355,45 +384,87 @@ function filterGallery(category, btn) {
    });
 }
 
+function startGalleryPreview(item, video) {
+   item.classList.add('is-playing');
+   video.currentTime = 0;
+   video.play().catch(() => {
+      // Playback can fail depending on browser policy.
+   });
+}
+
+function stopGalleryPreview(item, video) {
+   item.classList.remove('is-playing');
+   video.pause();
+   video.currentTime = 0;
+}
+
 document.querySelectorAll('.gallery-item').forEach((item) => {
    const video = item.querySelector('.gallery-video');
    const targetPage = item.dataset.page;
    if (!video) return;
+
+   video.muted = true;
+   video.defaultMuted = true;
+   video.loop = true;
+   video.playsInline = true;
+   video.setAttribute('playsinline', '');
+   video.setAttribute('webkit-playsinline', 'true');
 
    video.addEventListener('loadeddata', () => {
       video.pause();
       video.currentTime = 0;
    });
 
-   item.addEventListener('mouseenter', () => {
-      item.classList.add('is-playing');
-      video.currentTime = 0;
-      video.play().catch(() => {
-         // Playback can fail depending on browser policy.
+   if (!isTouchLikeDevice) {
+      item.addEventListener('mouseenter', () => {
+         startGalleryPreview(item, video);
       });
-   });
 
-   item.addEventListener('mouseleave', () => {
-      item.classList.remove('is-playing');
-      video.pause();
-      video.currentTime = 0;
-   });
+      item.addEventListener('mouseleave', () => {
+         stopGalleryPreview(item, video);
+      });
+   } else {
+      item.addEventListener('touchstart', () => {
+         if (activeTouchPreviewItem && activeTouchPreviewItem !== item) {
+            const previousVideo = activeTouchPreviewItem.querySelector('.gallery-video');
+            if (previousVideo) {
+               stopGalleryPreview(activeTouchPreviewItem, previousVideo);
+            }
+         }
+
+         startGalleryPreview(item, video);
+      }, { passive: true });
+   }
 
    if (targetPage) {
-      item.addEventListener('click', () => {
+      const openTargetPage = () => {
          const sourceSection = item.closest('.content-section')?.id || 'photography';
          const url = new URL(targetPage, window.location.href);
          url.searchParams.set('fromSection', sourceSection);
          window.location.href = url.toString();
+      };
+
+      item.addEventListener('click', () => {
+         if (isTouchLikeDevice && activeTouchPreviewItem !== item) {
+            if (activeTouchPreviewItem && activeTouchPreviewItem !== item) {
+               const previousVideo = activeTouchPreviewItem.querySelector('.gallery-video');
+               if (previousVideo) {
+                  stopGalleryPreview(activeTouchPreviewItem, previousVideo);
+               }
+            }
+
+            startGalleryPreview(item, video);
+            activeTouchPreviewItem = item;
+            return;
+         }
+
+         openTargetPage();
       });
 
       item.addEventListener('keydown', (event) => {
          if (event.key === 'Enter' || event.key === ' ') {
             event.preventDefault();
-            const sourceSection = item.closest('.content-section')?.id || 'photography';
-            const url = new URL(targetPage, window.location.href);
-            url.searchParams.set('fromSection', sourceSection);
-            window.location.href = url.toString();
+            openTargetPage();
          }
       });
    }

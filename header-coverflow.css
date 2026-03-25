@@ -224,6 +224,14 @@ body {
 }
 
 @media (max-width: 1000px) {
+  .hero-header {
+    min-height: 100svh;
+  }
+
+  .coverflow-container {
+    height: 100svh;
+  }
+
   .back-link-right {
     top: 12px;
     left: 50%;
@@ -254,7 +262,7 @@ body {
 
   .coverflow-item {
     width: min(55vw, 380px);
-    top: 60%;
+    top: 57%;
   }
 
   .nav-button {
@@ -279,7 +287,7 @@ body {
   }
 
   .hero-info {
-    top: 68px;
+    top: 62px;
     width: min(94vw, 680px);
   }
 
@@ -293,8 +301,8 @@ body {
   }
 
   .coverflow-item {
-    width: min(68vw, 330px);
-    top: 60%;
+    width: min(72vw, 330px);
+    top: 54%;
   }
 
   .dots-container {

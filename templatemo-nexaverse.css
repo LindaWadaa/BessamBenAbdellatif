@@ -1587,6 +1587,10 @@ body.video-popup-open {
 	transform: scale(1.03);
 }
 
+.gallery-item.is-playing .gallery-video {
+	transform: scale(1.03);
+}
+
 .gallery-overlay {
 	position: absolute;
 	inset: 0;
@@ -2347,5 +2351,21 @@ body.video-popup-open {
 	.tab-btn {
 		width: 100%;
 		max-width: 250px;
+	}
+}
+
+@media (hover: none) and (pointer: coarse) {
+	.gallery-video {
+		filter: brightness(0.95) contrast(1.03);
+	}
+
+	.gallery-item.is-playing {
+		border-color: var(--primary);
+		box-shadow: 0 14px 34px rgba(0, 0, 0, 0.35);
+	}
+
+	.gallery-item.is-playing .gallery-video {
+		transform: scale(1.05);
+		filter: brightness(1.08) contrast(1.08);
 	}
 }
