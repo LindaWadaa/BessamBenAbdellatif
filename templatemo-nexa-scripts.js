@@ -27,18 +27,38 @@ const videoPopupPlayer = document.getElementById('videoPopupPlayer');
 const popupCloseTriggers = document.querySelectorAll('[data-close-video-popup]');
 const isTouchLikeDevice = window.matchMedia('(hover: none), (pointer: coarse)').matches;
 let activeTouchPreviewItem = null;
+let headerVideoRetryCount = 0;
 
 function tryPlayHeaderVideo() {
    if (!headerVideo) return;
 
    headerVideo.muted = true;
    headerVideo.defaultMuted = true;
+   headerVideo.autoplay = true;
+   headerVideo.loop = true;
+   headerVideo.playsInline = true;
+   headerVideo.preload = 'auto';
+   headerVideo.setAttribute('autoplay', '');
+   headerVideo.setAttribute('muted', '');
+   headerVideo.setAttribute('loop', '');
    headerVideo.setAttribute('playsinline', '');
    headerVideo.setAttribute('webkit-playsinline', 'true');
+   headerVideo.setAttribute('disablepictureinpicture', '');
 
    headerVideo.play().catch(() => {
       // Mobile browsers may still wait for a user gesture.
    });
+}
+
+function forceHeaderVideoPlayback() {
+   if (!headerVideo) return;
+
+   tryPlayHeaderVideo();
+
+   if (headerVideo.paused && headerVideoRetryCount < 8) {
+      headerVideoRetryCount += 1;
+      setTimeout(forceHeaderVideoPlayback, 220);
+   }
 }
 
 function openVideoPopup() {
@@ -114,16 +134,31 @@ if (mainHeader) {
 
 if (headerVideo) {
    window.addEventListener('load', () => {
-      setTimeout(tryPlayHeaderVideo, 120);
+      headerVideoRetryCount = 0;
+      setTimeout(forceHeaderVideoPlayback, 120);
+   });
+
+   window.addEventListener('pageshow', () => {
+      headerVideoRetryCount = 0;
+      forceHeaderVideoPlayback();
+   });
+
+   headerVideo.addEventListener('loadedmetadata', forceHeaderVideoPlayback);
+   headerVideo.addEventListener('canplay', forceHeaderVideoPlayback);
+   headerVideo.addEventListener('ended', () => {
+      headerVideo.currentTime = 0;
+      forceHeaderVideoPlayback();
    });
 
    document.addEventListener('visibilitychange', () => {
       if (!document.hidden) {
-         tryPlayHeaderVideo();
+         headerVideoRetryCount = 0;
+         forceHeaderVideoPlayback();
       }
    });
 
-   document.addEventListener('touchstart', tryPlayHeaderVideo, { once: true, passive: true });
+   document.addEventListener('touchstart', forceHeaderVideoPlayback, { once: true, passive: true });
+   document.addEventListener('pointerdown', forceHeaderVideoPlayback, { once: true, passive: true });
 }
 
 popupCloseTriggers.forEach((element) => {

@@ -225,7 +225,15 @@ body {
 	object-fit: cover;
 	z-index: 0;
 	filter: brightness(0.78);
-	cursor: pointer;
+	pointer-events: none;
+	-webkit-user-select: none;
+	user-select: none;
+}
+
+.header-video::-webkit-media-controls,
+.header-video::-webkit-media-controls-start-playback-button {
+	display: none !important;
+	-webkit-appearance: none;
 }
 
 .header-overlay {
@@ -316,7 +324,7 @@ body.video-popup-open {
 	align-items: center;
 	padding: 50px 20px;
 	z-index: 2;
-	transform: translateY(-40px);
+	transform: translateY(-10px);
 	pointer-events: none;
 }
 
@@ -1407,6 +1415,25 @@ body.video-popup-open {
 	display: block;
 }
 
+#about #skills-production,
+#about #skills-post-production,
+#about #skills-production .production-flow,
+#about #skills-post-production .production-flow,
+#about #skills-production .production-item,
+#about #skills-post-production .production-item,
+#about #skills-production .production-text-marquee,
+#about #skills-post-production .postprod-tools-marquee,
+#about #skills-production .hardware-cards-marquee {
+	width: 100%;
+	max-width: 100%;
+	overflow-x: hidden;
+}
+
+#about #skills-production .production-item-title,
+#about #skills-post-production .production-item-title {
+	overflow-wrap: anywhere;
+}
+
 #about .skills-block {
 	margin-top: 44px;
 }
@@ -2268,6 +2295,23 @@ body.video-popup-open {
 	animation: fadeUp 0.5s ease-out 1.7s forwards;
 }
 
+.footer-social-nav {
+	margin: 0 auto 16px;
+	width: fit-content;
+	max-width: 100%;
+	justify-content: center;
+}
+
+.footer-social-nav .social-btn {
+	width: 44px;
+	height: 44px;
+}
+
+.footer-social-nav .social-icon {
+	width: 22px;
+	height: 22px;
+}
+
 .footer p {
 	font-size: 12px;
 	color: rgba(255, 255, 255, 0.4);
@@ -2282,6 +2326,10 @@ body.video-popup-open {
 
 .footer a:hover {
 	color: var(--secondary);
+}
+
+.footer-credit-link {
+	color: darkgray;
 }
 
 /* Responsive Design */
@@ -2454,6 +2502,11 @@ body.video-popup-open {
 }
 
 @media (max-width: 768px) {
+	#about #skills-production,
+	#about #skills-post-production {
+		overflow-x: clip;
+	}
+
 	#about {
 		--skills-group-gap: clamp(120px, 20vw, 210px);
 	}
@@ -2572,6 +2625,28 @@ body.video-popup-open {
 }
 
 @media (max-width: 480px) {
+	#about #skills-production,
+	#about #skills-post-production,
+	#about #skills-production .production-flow,
+	#about #skills-post-production .production-flow {
+		overflow-x: clip;
+	}
+
+	.footer-social-nav {
+		gap: 8px;
+		margin-bottom: 14px;
+	}
+
+	.footer-social-nav .social-btn {
+		width: 40px;
+		height: 40px;
+	}
+
+	.footer-social-nav .social-icon {
+		width: 20px;
+		height: 20px;
+	}
+
 	#about {
 		--skills-group-gap: clamp(80px, 16vw, 130px);
 	}
