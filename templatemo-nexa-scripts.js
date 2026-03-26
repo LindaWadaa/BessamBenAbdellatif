@@ -29,6 +29,11 @@ const isTouchLikeDevice = window.matchMedia('(hover: none), (pointer: coarse)').
 let activeTouchPreviewItem = null;
 let headerVideoRetryCount = 0;
 
+function markHeaderVideoReady() {
+   if (!headerVideo) return;
+   headerVideo.classList.add('is-ready');
+}
+
 function tryPlayHeaderVideo() {
    if (!headerVideo) return;
 
@@ -46,6 +51,7 @@ function tryPlayHeaderVideo() {
    headerVideo.setAttribute('disablepictureinpicture', '');
 
    headerVideo.play().catch(() => {
+      headerVideo.classList.remove('is-ready');
       // Mobile browsers may still wait for a user gesture.
    });
 }
@@ -133,6 +139,8 @@ if (mainHeader) {
 }
 
 if (headerVideo) {
+   headerVideo.classList.remove('is-ready');
+
    window.addEventListener('load', () => {
       headerVideoRetryCount = 0;
       setTimeout(forceHeaderVideoPlayback, 120);
@@ -145,6 +153,12 @@ if (headerVideo) {
 
    headerVideo.addEventListener('loadedmetadata', forceHeaderVideoPlayback);
    headerVideo.addEventListener('canplay', forceHeaderVideoPlayback);
+   headerVideo.addEventListener('playing', markHeaderVideoReady);
+   headerVideo.addEventListener('timeupdate', () => {
+      if (headerVideo.currentTime > 0.01) {
+         markHeaderVideoReady();
+      }
+   });
    headerVideo.addEventListener('ended', () => {
       headerVideo.currentTime = 0;
       forceHeaderVideoPlayback();
@@ -251,7 +265,7 @@ function showSection(sectionId) {
 
       if (sectionId === 'about') {
          initSkillsTransitionObserver();
-         setTimeout(refreshVisibleSkillsTracks, 120);
+         requestAnimationFrame(() => refreshVisibleSkillsTracks(true));
       }
 
       isTransitioning = false;
@@ -434,21 +448,24 @@ function restartTransitionTrack(track) {
 }
 
 function pauseSkillsTransitionTracks() {
-   const tracks = document.querySelectorAll('#about .skills-pane .tech-marquee .tech-track, #about .skills-pane .hardware-cards-track');
+   const tracks = document.querySelectorAll('#about .skills-pane.active .tech-marquee .tech-track, #about .skills-pane.active .hardware-cards-track, #about .skills-pane.active .postprod-tools-track');
    tracks.forEach((track) => {
       track.style.animationPlayState = 'running';
    });
 }
 
-function refreshVisibleSkillsTracks() {
-   const tracks = document.querySelectorAll('#about .skills-pane .tech-marquee .tech-track, #about .skills-pane .hardware-cards-track');
+function refreshVisibleSkillsTracks(forceRestart = false) {
+   const tracks = document.querySelectorAll('#about .skills-pane.active .tech-marquee .tech-track, #about .skills-pane.active .hardware-cards-track, #about .skills-pane.active .postprod-tools-track');
    tracks.forEach((track) => {
+      if (forceRestart) {
+         restartTransitionTrack(track);
+      }
       track.style.animationPlayState = 'running';
    });
 }
 
 function initSkillsTransitionObserver() {
-   refreshVisibleSkillsTracks();
+   refreshVisibleSkillsTracks(true);
 }
 
 function switchSkillsPane(btn, paneId) {
@@ -464,7 +481,7 @@ function switchSkillsPane(btn, paneId) {
       targetPane.classList.add('active');
 
       initSkillsTransitionObserver();
-      setTimeout(refreshVisibleSkillsTracks, 80);
+      requestAnimationFrame(() => refreshVisibleSkillsTracks(true));
    }
 }
 
