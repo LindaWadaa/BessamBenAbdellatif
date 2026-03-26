@@ -2261,6 +2261,7 @@ body.video-popup-open {
 .contact-details p {
 	color: #ffffff;
 	font-size: 15px;
+	overflow-wrap: break-word;
 }
 
 /* Exit animations */
@@ -2631,6 +2632,56 @@ body.video-popup-open {
 }
 
 @media (max-width: 480px) {
+	#contact .contact-grid {
+		gap: 18px;
+	}
+
+	#contact .contact-form {
+		gap: 14px;
+	}
+
+	#contact .form-group input,
+	#contact .form-group textarea {
+		padding: 13px 14px;
+		font-size: 13px;
+	}
+
+	#contact .submit-btn {
+		width: 100%;
+		padding: 13px 16px;
+		letter-spacing: 1.2px;
+	}
+
+	#contact .contact-item {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 12px;
+		padding: 16px;
+	}
+
+	#contact .contact-item.map-card {
+		padding: 12px;
+	}
+
+	#contact .map-frame iframe {
+		height: 160px;
+	}
+
+	#contact .contact-social-nav {
+		gap: 8px;
+		margin-top: 16px;
+	}
+
+	#contact .contact-social-nav .social-btn {
+		width: 42px;
+		height: 42px;
+	}
+
+	#contact .contact-social-nav .social-icon {
+		width: 21px;
+		height: 21px;
+	}
+
 	#about #skills-production,
 	#about #skills-post-production,
 	#about #skills-production .production-flow,

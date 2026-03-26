@@ -107,6 +107,10 @@ function openDirectSection(sectionId) {
 
    targetSection.classList.add('active');
 
+   if (sectionId === 'photography' || sectionId === 'videography') {
+      preloadSectionGalleryVideos(sectionId);
+   }
+
    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
    document.documentElement.scrollTop = 0;
    document.body.scrollTop = 0;
@@ -266,6 +270,10 @@ function showSection(sectionId) {
       if (sectionId === 'about') {
          initSkillsTransitionObserver();
          requestAnimationFrame(() => refreshVisibleSkillsTracks(true));
+      }
+
+      if (sectionId === 'photography' || sectionId === 'videography') {
+         preloadSectionGalleryVideos(sectionId);
       }
 
       isTransitioning = false;
@@ -497,6 +505,40 @@ function stopGalleryPreview(item, video) {
    item.classList.remove('is-playing');
    video.pause();
    video.currentTime = 0;
+}
+
+function primeGalleryVideo(video) {
+   video.preload = 'auto';
+
+   if (video.readyState < 2) {
+      video.load();
+   }
+
+   const playAttempt = video.play();
+   if (playAttempt && typeof playAttempt.then === 'function') {
+      playAttempt
+         .then(() => {
+            video.pause();
+            if (video.currentTime < 0.01) {
+               video.currentTime = 0.01;
+            }
+         })
+         .catch(() => {
+            // Some browsers block non-user initiated playback.
+         });
+   }
+}
+
+function preloadSectionGalleryVideos(sectionId) {
+   const section = document.getElementById(sectionId);
+   if (!section || section.dataset.videosPreloaded === '1') return;
+
+   const videos = section.querySelectorAll('.gallery-video');
+   videos.forEach((video) => {
+      primeGalleryVideo(video);
+   });
+
+   section.dataset.videosPreloaded = '1';
 }
 
 document.querySelectorAll('.gallery-item').forEach((item) => {
