@@ -578,40 +578,274 @@ I explore a wide range of visual styles—from modern cinematic to vintage, cybe
                 <button class="back-btn" onclick="backToMenu()">← Back to Menu</button>
 
                 <div class="section-header">
-                    <h2 class="section-title">About Us</h2>
-                    <p class="section-subtitle">Our story, mission, and values</p>
+                    <h2 class="section-title">Skills</h2>
+                    <p class="section-subtitle">My go-to tech stack</p>
                 </div>
 
-                <div class="about-content">
-                    <div class="about-text">
-                        <h3>Pioneering Digital Innovation</h3>
-                        <p>Founded in 2020, NexaVerse has grown from a small team of passionate developers into a leading digital agency. We believe in pushing boundaries and creating solutions that make a real difference.</p>
-                        <p>Our diverse team brings together expertise from design, development, AI, and strategy to deliver holistic solutions that drive business growth and user engagement.</p>
-                        <p>We're not just building products – we're shaping the future of digital experiences.</p>
-                        <p>Discover AI-optimized web templates from <a href="https://templatemo.com" rel="nofollow" target="_blank">TemplateMo</a>. Maximize efficiency with the timer platform at <a href="https://timermo.com" rel="nofollow" target="_blank">TimerMo</a>. Design like a pro using vector stickers from <a href="https://www.vectorsticker.com" rel="nofollow" target="_blank">VectorSticker</a>.</p>
-                    </div>
-                    <div class="about-image">
-                        <img src="images/about-our-team.jpg" alt="Our Team">
-                    </div>
+                <div class="filter-buttons skills-nav-buttons">
+                    <button class="filter-btn active" type="button" onclick="switchSkillsPane(this, 'skills-pre-production')">Pre-production</button>
+                    <button class="filter-btn" type="button" onclick="switchSkillsPane(this, 'skills-production')">Production</button>
+                    <button class="filter-btn" type="button" onclick="switchSkillsPane(this, 'skills-post-production')">Post-Production</button>
+                    <button class="filter-btn" type="button" onclick="switchSkillsPane(this, 'skills-creative-direction')">Creative Direction</button>
+                    <button class="filter-btn" type="button" onclick="switchSkillsPane(this, 'skills-team-management')">Team Management</button>
                 </div>
 
                 <!-- Tech Stack Preview -->
-                <div class="intro-tech">
-                    <p class="tech-label">Technologies We Master</p>
+                <div class="intro-tech skills-pane active" id="skills-pre-production">
+                    <p class="preprod-description">From ideas to organized execution</p>
                     <div class="tech-marquee">
                         <div class="tech-track">
-                            <span class="tech-item">React</span>
-                            <span class="tech-item">Next.js</span>
-                            <span class="tech-item">Node.js</span>
-                            <span class="tech-item">Python</span>
-                            <span class="tech-item">TensorFlow</span>
-                            <span class="tech-item">AWS</span>
-                            <span class="tech-item">Flutter</span>
-                            <span class="tech-item">Figma</span>
-                            <span class="tech-item">React</span>
-                            <span class="tech-item">Next.js</span>
-                            <span class="tech-item">Node.js</span>
-                            <span class="tech-item">Python</span>
+                            <span class="tech-item">Script</span>
+                            <span class="tech-item">Copywriting</span>
+                            <span class="tech-item">Préparation de découpage technique</span>
+                            <span class="tech-group-gap" aria-hidden="true"></span>
+                            <span class="tech-item">Script</span>
+                            <span class="tech-item">Copywriting</span>
+                            <span class="tech-item">Préparation de découpage technique</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="intro-tech skills-block skills-pane" id="skills-production">
+                    <p class="preprod-description">Bringing ideas to life through image and sound</p>
+
+                    <div class="production-flow">
+                        <div class="production-item">
+                            <div class="tech-marquee production-text-marquee">
+                                <div class="tech-track">
+                                    <span class="tech-item">Cinematography / Director of Photography</span>
+                                    <span class="tech-group-gap" aria-hidden="true"></span>
+                                    <span class="tech-item">Cinematography / Director of Photography</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="production-item">
+                            <p class="production-item-title">Camera operation</p>
+                            <div class="hardware-cards-marquee" aria-label="Camera hardware preview cards">
+                                <div class="hardware-cards-track">
+                                    <article class="hardware-card">
+                                        <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=900&h=600&fit=crop" alt="Camera setup placeholder 1">
+                                    </article>
+                                    <article class="hardware-card">
+                                        <img src="https://images.unsplash.com/photo-1495707902641-75cac588d2e9?w=900&h=600&fit=crop" alt="Camera setup placeholder 2">
+                                    </article>
+                                    <article class="hardware-card">
+                                        <img src="https://images.unsplash.com/photo-1516724562728-afc824a36e84?w=900&h=600&fit=crop" alt="Camera setup placeholder 3">
+                                    </article>
+                                    <article class="hardware-card">
+                                        <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=900&h=600&fit=crop" alt="Camera setup placeholder 4">
+                                    </article>
+                                    <article class="hardware-card">
+                                        <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=900&h=600&fit=crop" alt="Camera setup placeholder 1 duplicate">
+                                    </article>
+                                    <article class="hardware-card">
+                                        <img src="https://images.unsplash.com/photo-1495707902641-75cac588d2e9?w=900&h=600&fit=crop" alt="Camera setup placeholder 2 duplicate">
+                                    </article>
+                                    <article class="hardware-card">
+                                        <img src="https://images.unsplash.com/photo-1516724562728-afc824a36e84?w=900&h=600&fit=crop" alt="Camera setup placeholder 3 duplicate">
+                                    </article>
+                                    <article class="hardware-card">
+                                        <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=900&h=600&fit=crop" alt="Camera setup placeholder 4 duplicate">
+                                    </article>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="production-item">
+                            <p class="production-item-title">Machine operation</p>
+                            <div class="tech-marquee production-text-marquee">
+                                <div class="tech-track">
+                                    <span class="tech-item">DJI Ronin stabilizers</span>
+                                    <span class="tech-item">Steadicam</span>
+                                    <span class="tech-group-gap" aria-hidden="true"></span>
+                                    <span class="tech-item">DJI Ronin stabilizers</span>
+                                    <span class="tech-item">Steadicam</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="production-item">
+                            <p class="production-item-title">Lighting design</p>
+                            <div class="tech-marquee production-text-marquee">
+                                <div class="tech-track">
+                                    <span class="tech-item">Natural light</span>
+                                    <span class="tech-item">Artificial light</span>
+                                    <span class="tech-group-gap" aria-hidden="true"></span>
+                                    <span class="tech-item">Natural light</span>
+                                    <span class="tech-item">Artificial light</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="production-item">
+                            <p class="production-item-title">Set and studio creation</p>
+                            <div class="tech-marquee production-text-marquee">
+                                <div class="tech-track">
+                                    <span class="tech-item">Set and studio creation</span>
+                                    <span class="tech-group-gap" aria-hidden="true"></span>
+                                    <span class="tech-item">Set and studio creation</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="production-item">
+                            <p class="production-item-title">Location scouting</p>
+                            <div class="tech-marquee production-text-marquee">
+                                <div class="tech-track">
+                                    <span class="tech-item">Location scouting</span>
+                                    <span class="tech-group-gap" aria-hidden="true"></span>
+                                    <span class="tech-item">Location scouting</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="intro-tech skills-block skills-pane" id="skills-post-production">
+                    <p class="preprod-description">Polishing the raw material into a final masterpiece</p>
+
+                    <div class="production-flow">
+                        <div class="production-item">
+                            <p class="production-item-title">Video editing (long-form &amp; short-form)</p>
+                            <div class="postprod-tools-marquee" aria-label="Video editing tools">
+                                <div class="postprod-tools-track">
+                                    <article class="postprod-tool-card">
+                                        <img src="https://upload.wikimedia.org/wikipedia/commons/3/34/Adobe_Premiere_Pro_CC_2026_icon.svg" alt="Adobe Premiere Pro">
+                                        <div class="postprod-tool-overlay"><h4>Adobe Premiere Pro</h4></div>
+                                    </article>
+                                    <article class="postprod-tool-card">
+                                        <img src="https://upload.wikimedia.org/wikipedia/it/a/a9/Final_Cut_Pro_10.5.png" alt="Final Cut Pro">
+                                        <div class="postprod-tool-overlay"><h4>Final Cut Pro</h4></div>
+                                    </article>
+                                    <article class="postprod-tool-card">
+                                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/90/DaVinci_Resolve_17_logo.svg" alt="DaVinci Resolve">
+                                        <div class="postprod-tool-overlay"><h4>DaVinci Resolve</h4></div>
+                                    </article>
+                                    <article class="postprod-tool-card" aria-hidden="true">
+                                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/40/Adobe_Premiere_Pro_CC_icon.svg" alt="Adobe Premiere Pro duplicate">
+                                        <div class="postprod-tool-overlay"><h4>Adobe Premiere Pro</h4></div>
+                                    </article>
+                                    <article class="postprod-tool-card" aria-hidden="true">
+                                        <img src="https://upload.wikimedia.org/wikipedia/it/a/a9/Final_Cut_Pro_10.5.png">
+                                        <div class="postprod-tool-overlay"><h4>Final Cut Pro</h4></div>
+                                    </article>
+                                    <article class="postprod-tool-card" aria-hidden="true">
+                                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/90/DaVinci_Resolve_17_logo.svg" alt="DaVinci Resolve duplicate">
+                                        <div class="postprod-tool-overlay"><h4>DaVinci Resolve</h4></div>
+                                    </article>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="production-item">
+                            <p class="production-item-title">Color grading</p>
+                            <div class="postprod-tools-marquee" aria-label="Color grading tools">
+                                <div class="postprod-tools-track">
+                                    <article class="postprod-tool-card">
+                                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/90/DaVinci_Resolve_17_logo.svg" alt="DaVinci Resolve for color grading">
+                                        <div class="postprod-tool-overlay"><h4>DaVinci Resolve</h4></div>
+                                    </article>
+                                    <article class="postprod-tool-card">
+                                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/40/Adobe_Premiere_Pro_CC_icon.svg" alt="Adobe Premiere Pro for color grading">
+                                        <div class="postprod-tool-overlay"><h4>Adobe Premiere Pro</h4></div>
+                                    </article>
+                                    <article class="postprod-tool-card" aria-hidden="true">
+                                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/90/DaVinci_Resolve_17_logo.svg" alt="DaVinci Resolve for color grading duplicate">
+                                        <div class="postprod-tool-overlay"><h4>DaVinci Resolve</h4></div>
+                                    </article>
+                                    <article class="postprod-tool-card" aria-hidden="true">
+                                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/40/Adobe_Premiere_Pro_CC_icon.svg" alt="Adobe Premiere Pro for color grading duplicate">
+                                        <div class="postprod-tool-overlay"><h4>Adobe Premiere Pro</h4></div>
+                                    </article>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="production-item">
+                            <p class="production-item-title">Visual effects</p>
+                            <div class="postprod-tools-marquee" aria-label="Visual effects tools">
+                                <div class="postprod-tools-track">
+                                    <article class="postprod-tool-card">
+                                        <img src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Adobe_After_Effects_CC_icon.svg" alt="Adobe After Effects">
+                                        <div class="postprod-tool-overlay"><h4>Adobe After Effects</h4></div>
+                                    </article>
+                                    <article class="postprod-tool-card">
+                                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4d/OpenAI_Logo.svg" alt="AI tools for visual effects">
+                                        <div class="postprod-tool-overlay"><h4>AI tools</h4></div>
+                                    </article>
+                                    <article class="postprod-tool-card" aria-hidden="true">
+                                        <img src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Adobe_After_Effects_CC_icon.svg" alt="Adobe After Effects duplicate">
+                                        <div class="postprod-tool-overlay"><h4>Adobe After Effects</h4></div>
+                                    </article>
+                                    <article class="postprod-tool-card" aria-hidden="true">
+                                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4d/OpenAI_Logo.svg" alt="AI tools for visual effects duplicate">
+                                        <div class="postprod-tool-overlay"><h4>AI tools</h4></div>
+                                    </article>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="production-item">
+                            <p class="production-item-title">Photo retouching</p>
+                            <div class="postprod-tools-marquee" aria-label="Photo retouching tools">
+                                <div class="postprod-tools-track">
+                                    <article class="postprod-tool-card">
+                                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/af/Adobe_Photoshop_CC_icon.svg" alt="Adobe Photoshop">
+                                        <div class="postprod-tool-overlay"><h4>Adobe Photoshop</h4></div>
+                                    </article>
+                                    <article class="postprod-tool-card">
+                                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Adobe_Lightroom_CC_2026_icon.svg" alt="Adobe Lightroom">
+                                        <div class="postprod-tool-overlay"><h4>Adobe Lightroom</h4></div>
+                                    </article>
+                                    <article class="postprod-tool-card">
+                                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4d/OpenAI_Logo.svg" alt="AI tools for retouching">
+                                        <div class="postprod-tool-overlay"><h4>AI tools</h4></div>
+                                    </article>
+                                    <article class="postprod-tool-card" aria-hidden="true">
+                                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/af/Adobe_Photoshop_CC_icon.svg" alt="Adobe Photoshop duplicate">
+                                        <div class="postprod-tool-overlay"><h4>Adobe Photoshop</h4></div>
+                                    </article>
+                                    <article class="postprod-tool-card" aria-hidden="true">
+                                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Adobe_Lightroom_CC_2026_icon.svg" alt="Adobe Lightroom duplicate">
+                                        <div class="postprod-tool-overlay"><h4>Adobe Lightroom</h4></div>
+                                    </article>
+                                    <article class="postprod-tool-card" aria-hidden="true">
+                                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4d/OpenAI_Logo.svg" alt="AI tools for retouching duplicate">
+                                        <div class="postprod-tool-overlay"><h4>AI tools</h4></div>
+                                    </article>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="intro-tech skills-block skills-pane" id="skills-creative-direction">
+                    <p class="preprod-description">Shaping the visual identity and artistic vision</p>
+
+                    <div class="tech-marquee" aria-label="Creative direction focus areas">
+                        <div class="tech-track">
+                            <span class="tech-item">Visual style development</span>
+                            <span class="tech-item">Mood creation through light &amp; color</span>
+                            <span class="tech-item">Art direction</span>
+                            <span class="tech-group-gap" aria-hidden="true"></span>
+                            <span class="tech-item">Visual style development</span>
+                            <span class="tech-item">Mood creation through light &amp; color</span>
+                            <span class="tech-item">Art direction</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="intro-tech skills-block skills-pane" id="skills-team-management">
+                    <p class="preprod-description">Leading teams to bring ideas to life</p>
+
+                    <div class="tech-marquee" aria-label="Team management focus areas">
+                        <div class="tech-track">
+                            <span class="tech-item">Coordinating production teams</span>
+                            <span class="tech-item">Project workflow management</span>
+                            <span class="tech-group-gap" aria-hidden="true"></span>
+                            <span class="tech-item">Coordinating production teams</span>
+                            <span class="tech-item">Project workflow management</span>
                         </div>
                     </div>
                 </div>

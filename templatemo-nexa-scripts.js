@@ -214,6 +214,11 @@ function showSection(sectionId) {
          setTimeout(animateStats, 500);
       }
 
+      if (sectionId === 'about') {
+         initSkillsTransitionObserver();
+         setTimeout(refreshVisibleSkillsTracks, 120);
+      }
+
       isTransitioning = false;
    }, 550);
 }
@@ -382,6 +387,50 @@ function filterGallery(category, btn) {
          item.classList.remove('is-playing');
       }
    });
+}
+
+let skillsTransitionObserver = null;
+
+function restartTransitionTrack(track) {
+   track.style.animation = 'none';
+   void track.offsetWidth;
+   track.style.animation = '';
+   track.style.animationPlayState = 'running';
+}
+
+function pauseSkillsTransitionTracks() {
+   const tracks = document.querySelectorAll('#about .skills-pane .tech-marquee .tech-track, #about .skills-pane .hardware-cards-track');
+   tracks.forEach((track) => {
+      track.style.animationPlayState = 'running';
+   });
+}
+
+function refreshVisibleSkillsTracks() {
+   const tracks = document.querySelectorAll('#about .skills-pane .tech-marquee .tech-track, #about .skills-pane .hardware-cards-track');
+   tracks.forEach((track) => {
+      track.style.animationPlayState = 'running';
+   });
+}
+
+function initSkillsTransitionObserver() {
+   refreshVisibleSkillsTracks();
+}
+
+function switchSkillsPane(btn, paneId) {
+   const skillsNavButtons = document.querySelectorAll('#about .skills-nav-buttons .filter-btn');
+   skillsNavButtons.forEach((navBtn) => navBtn.classList.remove('active'));
+   btn.classList.add('active');
+
+   const panes = document.querySelectorAll('#about .skills-pane');
+   panes.forEach((pane) => pane.classList.remove('active'));
+
+   const targetPane = document.getElementById(paneId);
+   if (targetPane) {
+      targetPane.classList.add('active');
+
+      initSkillsTransitionObserver();
+      setTimeout(refreshVisibleSkillsTracks, 80);
+   }
 }
 
 function startGalleryPreview(item, video) {

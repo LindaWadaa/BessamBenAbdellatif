@@ -1356,6 +1356,230 @@ body.video-popup-open {
 	color: var(--primary);
 }
 
+#about .preprod-title {
+	font-family: 'Syne', sans-serif;
+	font-size: 28px;
+	font-weight: 600;
+	letter-spacing: 0.5px;
+	text-transform: none;
+	margin-bottom: 18px;
+	color: #ffffff;
+	-webkit-text-fill-color: #ffffff;
+}
+
+#about .preprod-description {
+	font-size: 16px;
+	font-weight: 400;
+	letter-spacing: 0.2px;
+	text-transform: none;
+	margin-bottom: 18px;
+	color: #ffffff;
+}
+
+#about .tech-item {
+	color: rgba(255, 255, 255, 0.68);
+}
+
+#about .tech-track {
+	animation-name: marquee;
+	animation-duration: var(--skills-marquee-speed, 30s);
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+}
+
+#about {
+	--skills-marquee-speed: 30s;
+	--skills-group-gap: clamp(240px, 28vw, 520px);
+}
+
+#about .tech-group-gap {
+	flex: 0 0 var(--skills-group-gap);
+	min-width: var(--skills-group-gap);
+	width: var(--skills-group-gap);
+	pointer-events: none;
+}
+
+#about .skills-pane {
+	display: none;
+}
+
+#about .skills-pane.active {
+	display: block;
+}
+
+#about .skills-block {
+	margin-top: 44px;
+}
+
+#about .skills-text-grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 18px;
+	margin-bottom: 24px;
+}
+
+#about .skills-text-card {
+	text-align: left;
+	padding: 24px;
+	background: var(--glass-bg);
+	-webkit-backdrop-filter: blur(20px);
+	backdrop-filter: blur(20px);
+	border: 1px solid var(--glass-border);
+	border-radius: 16px;
+}
+
+#about .skills-subtitle {
+	font-family: 'Syne', sans-serif;
+	font-size: 20px;
+	font-weight: 600;
+	color: #ffffff;
+	margin: 0 0 12px;
+}
+
+#about .skills-list {
+	margin: 0 0 18px 18px;
+	padding: 0;
+	color: rgba(255, 255, 255, 0.8);
+	line-height: 1.75;
+	font-size: 15px;
+}
+
+#about .skills-list-spaced {
+	margin-top: 6px;
+}
+
+#about .skills-line {
+	margin: 0 0 10px;
+	font-size: 15px;
+	line-height: 1.7;
+	color: rgba(255, 255, 255, 0.82);
+}
+
+#about .production-flow {
+	display: grid;
+	gap: 18px;
+}
+
+#about .production-item {
+	text-align: left;
+	padding: 0;
+}
+
+#about .production-item-title {
+	margin: 0 0 8px;
+	font-size: 16px;
+	font-weight: 500;
+	color: #ffffff;
+}
+
+#about .production-text-marquee {
+	padding: 20px 0;
+}
+
+#about .production-text-marquee .tech-track {
+	animation-duration: var(--skills-marquee-speed, 30s);
+}
+
+#skills-production .tech-track,
+#skills-production .hardware-cards-track {
+	animation-duration: var(--skills-marquee-speed, 30s);
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+}
+
+#about .hardware-cards-marquee {
+	overflow: hidden;
+	position: relative;
+	padding: 6px 0 4px;
+}
+
+#about .hardware-cards-track {
+	display: flex;
+	gap: 18px;
+	width: max-content;
+	animation: hardwareCardsMarquee var(--skills-marquee-speed, 30s) linear infinite;
+}
+
+#about .hardware-card {
+	min-width: 260px;
+	max-width: 260px;
+	background: var(--glass-bg);
+	-webkit-backdrop-filter: blur(20px);
+	backdrop-filter: blur(20px);
+	border: 1px solid var(--glass-border);
+	border-radius: 14px;
+	overflow: hidden;
+}
+
+#about .hardware-card img {
+	width: 100%;
+	height: 150px;
+	object-fit: cover;
+	display: block;
+}
+
+#about .postprod-tools-marquee {
+	overflow: hidden;
+	position: relative;
+	padding: 8px 0 4px;
+}
+
+#about .postprod-tools-track {
+	display: flex;
+	gap: 18px;
+	width: max-content;
+	animation: hardwareCardsMarquee var(--skills-marquee-speed, 30s) linear infinite;
+}
+
+#about .postprod-tool-card {
+	position: relative;
+	min-width: 280px;
+	max-width: 280px;
+	height: 170px;
+	border-radius: 14px;
+	overflow: hidden;
+	border: 1px solid var(--glass-border);
+	background: #111111;
+}
+
+#about .postprod-tool-card img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+	object-position: center;
+	display: block;
+	padding: 22px;
+	filter: saturate(1.08) contrast(1.04);
+}
+
+#about .postprod-tool-overlay {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	padding: 30px 14px 12px;
+	background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(4, 4, 4, 0.82) 58%, rgba(4, 4, 4, 0.95) 100%);
+	text-align: left;
+}
+
+#about .postprod-tool-overlay h4 {
+	margin: 0;
+	font-family: 'Syne', sans-serif;
+	font-size: 13px;
+	font-weight: 600;
+	color: #ffffff;
+	line-height: 1.25;
+}
+
+@keyframes hardwareCardsMarquee {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(-50%);
+	}
+}
+
 /* Services Row Layout */
 .services-list {
 	display: grid;
@@ -2062,6 +2286,59 @@ body.video-popup-open {
 
 /* Responsive Design */
 @media (max-width: 992px) {
+	#about {
+		--skills-group-gap: clamp(170px, 22vw, 320px);
+	}
+
+	#about .skills-nav-buttons {
+		flex-wrap: wrap;
+		justify-content: center;
+		overflow: visible;
+		padding: 0;
+		row-gap: 8px;
+	}
+
+	#about .skills-nav-buttons .filter-btn {
+		white-space: normal;
+		flex: 0 1 auto;
+		text-align: center;
+	}
+
+	#about .skills-block {
+		margin-top: 30px;
+	}
+
+	#about .production-flow {
+		gap: 14px;
+	}
+
+	#about .hardware-card {
+		min-width: 220px;
+		max-width: 220px;
+	}
+
+	#about .hardware-card img {
+		height: 138px;
+	}
+
+	#about .postprod-tool-card {
+		min-width: 240px;
+		max-width: 240px;
+		height: 155px;
+	}
+
+	#about .postprod-tool-card img {
+		padding: 18px;
+	}
+
+	#about .postprod-tool-overlay {
+		padding: 24px 12px 10px;
+	}
+
+	#about .postprod-tool-overlay h4 {
+		font-size: 12px;
+	}
+
 	.section-header-small {
 		position: relative;
 		top: auto;
@@ -2177,6 +2454,45 @@ body.video-popup-open {
 }
 
 @media (max-width: 768px) {
+	#about {
+		--skills-group-gap: clamp(120px, 20vw, 210px);
+	}
+
+	#about .preprod-description {
+		font-size: 15px;
+	}
+
+	#about .tech-track {
+		gap: 24px;
+	}
+
+	#about .tech-item {
+		font-size: 15px;
+	}
+
+	#about .production-item-title {
+		font-size: 15px;
+	}
+
+	#about .hardware-card {
+		min-width: 195px;
+		max-width: 195px;
+	}
+
+	#about .hardware-card img {
+		height: 124px;
+	}
+
+	#about .postprod-tool-card {
+		min-width: 205px;
+		max-width: 205px;
+		height: 136px;
+	}
+
+	#about .postprod-tool-card img {
+		padding: 14px;
+	}
+
 	.brand-name {
 		font-size: 36px;
 		letter-spacing: 4px;
@@ -2256,6 +2572,51 @@ body.video-popup-open {
 }
 
 @media (max-width: 480px) {
+	#about {
+		--skills-group-gap: clamp(80px, 16vw, 130px);
+	}
+
+	#about .skills-nav-buttons {
+		gap: 6px;
+	}
+
+	#about .skills-nav-buttons .filter-btn {
+		padding: 8px 12px;
+		font-size: 10px;
+	}
+
+	#about .tech-marquee::before,
+	#about .tech-marquee::after {
+		width: 46px;
+	}
+
+	#about .tech-item {
+		font-size: 14px;
+	}
+
+	#about .hardware-card {
+		min-width: 170px;
+		max-width: 170px;
+	}
+
+	#about .hardware-card img {
+		height: 110px;
+	}
+
+	#about .postprod-tool-card {
+		min-width: 172px;
+		max-width: 172px;
+		height: 118px;
+	}
+
+	#about .postprod-tool-card img {
+		padding: 12px;
+	}
+
+	#about .postprod-tool-overlay h4 {
+		font-size: 11px;
+	}
+
 	.menu-grid {
 		gap: 10px;
 	}
