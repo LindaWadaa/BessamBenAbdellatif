@@ -422,15 +422,16 @@ function filterGallery(category, btn) {
    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
    btn.classList.add('active');
 
-   const galleryGrid = document.querySelector('.gallery-grid');
-   const items = document.querySelectorAll('.gallery-item');
+   const section = btn.closest('.content-section') || document;
+   const galleryGrid = section.querySelector('.gallery-grid');
+   const items = section.querySelectorAll('.gallery-item');
 
-    if (galleryGrid) {
+   if (galleryGrid) {
       galleryGrid.classList.toggle('single-card-view', category !== 'all');
-    }
+   }
 
    items.forEach(item => {
-      const video = item.querySelector('.gallery-video');
+      const video = item.querySelector('video.gallery-video');
 
       if (category === 'all' || item.dataset.category === category) {
          item.style.display = 'block';
@@ -542,41 +543,41 @@ function preloadSectionGalleryVideos(sectionId) {
 }
 
 document.querySelectorAll('.gallery-item').forEach((item) => {
-   const video = item.querySelector('.gallery-video');
+   const video = item.querySelector('video.gallery-video');
    const targetPage = item.dataset.page;
-   if (!video) return;
+   if (video) {
+      video.muted = true;
+      video.defaultMuted = true;
+      video.loop = true;
+      video.playsInline = true;
+      video.setAttribute('playsinline', '');
+      video.setAttribute('webkit-playsinline', 'true');
 
-   video.muted = true;
-   video.defaultMuted = true;
-   video.loop = true;
-   video.playsInline = true;
-   video.setAttribute('playsinline', '');
-   video.setAttribute('webkit-playsinline', 'true');
-
-   video.addEventListener('loadeddata', () => {
-      video.pause();
-      video.currentTime = 0;
-   });
-
-   if (!isTouchLikeDevice) {
-      item.addEventListener('mouseenter', () => {
-         startGalleryPreview(item, video);
+      video.addEventListener('loadeddata', () => {
+         video.pause();
+         video.currentTime = 0;
       });
 
-      item.addEventListener('mouseleave', () => {
-         stopGalleryPreview(item, video);
-      });
-   } else {
-      item.addEventListener('touchstart', () => {
-         if (activeTouchPreviewItem && activeTouchPreviewItem !== item) {
-            const previousVideo = activeTouchPreviewItem.querySelector('.gallery-video');
-            if (previousVideo) {
-               stopGalleryPreview(activeTouchPreviewItem, previousVideo);
+      if (!isTouchLikeDevice) {
+         item.addEventListener('mouseenter', () => {
+            startGalleryPreview(item, video);
+         });
+
+         item.addEventListener('mouseleave', () => {
+            stopGalleryPreview(item, video);
+         });
+      } else {
+         item.addEventListener('touchstart', () => {
+            if (activeTouchPreviewItem && activeTouchPreviewItem !== item) {
+               const previousVideo = activeTouchPreviewItem.querySelector('video.gallery-video');
+               if (previousVideo) {
+                  stopGalleryPreview(activeTouchPreviewItem, previousVideo);
+               }
             }
-         }
 
-         startGalleryPreview(item, video);
-      }, { passive: true });
+            startGalleryPreview(item, video);
+         }, { passive: true });
+      }
    }
 
    if (targetPage) {
@@ -588,9 +589,9 @@ document.querySelectorAll('.gallery-item').forEach((item) => {
       };
 
       item.addEventListener('click', () => {
-         if (isTouchLikeDevice && activeTouchPreviewItem !== item) {
+         if (isTouchLikeDevice && video && activeTouchPreviewItem !== item) {
             if (activeTouchPreviewItem && activeTouchPreviewItem !== item) {
-               const previousVideo = activeTouchPreviewItem.querySelector('.gallery-video');
+               const previousVideo = activeTouchPreviewItem.querySelector('video.gallery-video');
                if (previousVideo) {
                   stopGalleryPreview(activeTouchPreviewItem, previousVideo);
                }

@@ -1821,7 +1821,8 @@ body.video-popup-open {
 	transition: all 0.4s ease;
 }
 
-.gallery-video {
+.gallery-video,
+.gallery-image {
 	position: absolute;
 	inset: 0;
 	width: 100%;
@@ -1840,7 +1841,8 @@ body.video-popup-open {
 	border-color: var(--primary);
 }
 
-.gallery-item:hover .gallery-video {
+.gallery-item:hover .gallery-video,
+.gallery-item:hover .gallery-image {
 	transform: scale(1.03);
 }
 
@@ -1873,6 +1875,10 @@ body.video-popup-open {
 	-webkit-text-fill-color: transparent;
 	background-clip: text;
 	margin-bottom: 5px;
+}
+
+.gallery-overlay h4::after {
+	content: " \2192";
 }
 
 .gallery-overlay p {
@@ -2860,5 +2866,110 @@ body.video-popup-open {
 	.gallery-item.is-playing .gallery-video {
 		transform: scale(1.05);
 		filter: brightness(1.08) contrast(1.08);
+	}
+}
+
+@media (max-width: 1200px) {
+	.container {
+		padding: 0 16px 32px;
+	}
+
+	.filter-buttons {
+		justify-content: flex-start;
+		overflow-x: auto;
+		overflow-y: hidden;
+		white-space: nowrap;
+		flex-wrap: nowrap;
+		padding-bottom: 8px;
+		gap: 8px;
+	}
+
+	.filter-buttons::-webkit-scrollbar {
+		height: 6px;
+	}
+
+	.filter-buttons::-webkit-scrollbar-thumb {
+		background: rgba(255, 255, 255, 0.2);
+		border-radius: 99px;
+	}
+
+	.filter-btn {
+		flex: 0 0 auto;
+	}
+}
+
+@media (max-width: 900px) {
+	.filter-buttons {
+		justify-content: center;
+		overflow: visible;
+		white-space: normal;
+		flex-wrap: wrap;
+		padding-bottom: 0;
+		row-gap: 8px;
+	}
+
+	.filter-btn {
+		flex: 0 1 auto;
+		max-width: 100%;
+	}
+}
+
+@media (max-width: 768px) {
+	.content-section {
+		padding: 22px 12px;
+	}
+
+	.section-subtitle {
+		font-size: 14px;
+		line-height: 1.5;
+	}
+
+	.gallery-item {
+		min-height: 180px;
+		aspect-ratio: 16 / 10;
+	}
+
+	.gallery-grid.single-card-view {
+		padding-top: 4px;
+	}
+
+	.gallery-grid.single-card-view .gallery-item {
+		width: min(100%, 720px);
+	}
+
+	.gallery-overlay {
+		padding: 14px;
+	}
+
+	.gallery-overlay h4 {
+		font-size: 15px;
+	}
+}
+
+@media (max-width: 480px) {
+	.container {
+		padding: 0 10px 24px;
+	}
+
+	.content-section {
+		padding: 18px 8px;
+	}
+
+	.section-title {
+		font-size: 24px;
+	}
+
+	.filter-btn {
+		padding: 8px 12px;
+		font-size: 10px;
+		letter-spacing: 0.6px;
+	}
+
+	.gallery-item {
+		min-height: 170px;
+	}
+
+	.gallery-overlay h4 {
+		font-size: 14px;
 	}
 }
