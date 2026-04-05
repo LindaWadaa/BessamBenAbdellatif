@@ -7,7 +7,6 @@
       "https://player.cloudinary.com/embed/?cloud_name=dhv8nf1wd&public_id=%D9%8A%D8%A7%D8%AE%D9%8A_%D9%83%D9%84_%D9%8A%D9%88%D9%85_%D8%B9%D9%8A%D8%AF_%D9%8A%D8%A7_%D9%85%D8%AC%D9%8A%D8%AF_cdkphc",
       "https://player.cloudinary.com/embed/?cloud_name=dhv8nf1wd&public_id=trend_011_put3l0",
       "https://res.cloudinary.com/dhv8nf1wd/video/upload/v1774585785/tayara_intro_outro_ku2re1.mp4",
-      "https://player.cloudinary.com/embed/?cloud_name=dhv8nf1wd&public_id=Spot_Officiel_de_la_5%C3%A8me_%C3%A9dition_des_Journ%C3%A9es_Chor%C3%A9graphiques_de_Carthage_l6nvup",
       "https://player.cloudinary.com/embed/?cloud_name=dhv8nf1wd&public_id=Spot_officiel_FCT_2024_gibkmr",
       "https://res.cloudinary.com/dhv8nf1wd/video/upload/v1774629078/spot_fashion_show_KHAYALI_01_FINAL_kpdglt.mp4",
       "https://player.cloudinary.com/embed/?cloud_name=dhv8nf1wd&public_id=Split_5_FCT_2024_vsyvyv",
@@ -94,6 +93,53 @@
       "EF9A6054.JPG"
     ]
   },
+  "product-shoots-videography.html": {
+    titlePrefix: "Product Shoot",
+    mediaType: "video",
+    files: [
+      "https://res.cloudinary.com/dhv8nf1wd/video/upload/v1775300968/voila_voila_v01_iwt4i6.mp4",
+      "https://res.cloudinary.com/dhv8nf1wd/video/upload/v1775302245/video_01_g38bia.mp4",
+      "https://res.cloudinary.com/dhv8nf1wd/video/upload/v1775303254/vd_02_nhkru8.mp4",
+      "https://res.cloudinary.com/dhv8nf1wd/video/upload/v1775304112/trend033_kpgy69.mp4",
+      "https://res.cloudinary.com/dhv8nf1wd/video/upload/v1775307607/trend02_mj7g4d.mp4",
+      "https://res.cloudinary.com/dhv8nf1wd/video/upload/v1775307828/trend_storyville_02_logo_jz4qxt.mp4",
+      "https://res.cloudinary.com/dhv8nf1wd/video/upload/v1775308492/trend_box_v1_2_ukepro.mp4",
+      "https://res.cloudinary.com/dhv8nf1wd/video/upload/v1775315564/trend_033_sbkxsd.mp4",
+      "https://res.cloudinary.com/dhv8nf1wd/video/upload/v1775387756/trend_ads_wlxlvx.mp4",
+      "https://res.cloudinary.com/dhv8nf1wd/video/upload/v1775388567/trend_022_qvokfz.mp4",
+      "https://res.cloudinary.com/dhv8nf1wd/video/upload/v1775389790/trend_04_forchita_imwrxe.mp4",
+      "https://res.cloudinary.com/dhv8nf1wd/video/upload/v1775390202/trend_02_noir_et_blanc_vrqqyv.mp4",
+      "https://res.cloudinary.com/dhv8nf1wd/video/upload/v1775390536/trend_01_gcvb54.mp4",
+      "https://res.cloudinary.com/dhv8nf1wd/video/upload/v1775391012/tranchetta_trend01_uppyvs.mp4",
+      "https://res.cloudinary.com/dhv8nf1wd/video/upload/v1775391599/the_roof_qxryce.mp4",
+      "https://res.cloudinary.com/dhv8nf1wd/video/upload/v1775391785/th%C3%A9_v00_puzbqm.mp4",
+      "https://res.cloudinary.com/dhv8nf1wd/video/upload/v1775392283/storyville_wzbsft.mp4",
+      "https://res.cloudinary.com/dhv8nf1wd/video/upload/v1775392707/story_02_lejmdg.mp4",
+      "https://res.cloudinary.com/dhv8nf1wd/video/upload/v1775393557/skinlove_vd03_v00_sp1i3a.mp4",
+      "https://res.cloudinary.com/dhv8nf1wd/video/upload/v1775394247/skinlove_R01_oxi4yw.mp4",
+      "https://res.cloudinary.com/dhv8nf1wd/video/upload/v1775394855/reel_03_pnqewl.mp4",
+      "https://res.cloudinary.com/dhv8nf1wd/video/upload/v1775395239/reel_01_1_drltee.mp4",
+      "https://res.cloudinary.com/dhv8nf1wd/video/upload/v1775396436/produit_03_la_cigale_bqgfit.mp4",
+      "https://res.cloudinary.com/dhv8nf1wd/video/upload/v1775397362/reel_02_mahrsi_lzyquc.mp4",
+      "https://res.cloudinary.com/dhv8nf1wd/video/upload/v1775398076/plaid_06_qmhtbv.mp4",
+      "https://res.cloudinary.com/dhv8nf1wd/video/upload/v1775398228/plaid_07_rtcm9x.mp4",
+      "https://res.cloudinary.com/dhv8nf1wd/video/upload/v1775398646/plaid_01_js9yad.mp4",
+      "https://res.cloudinary.com/dhv8nf1wd/video/upload/v1775399078/photos_montage_rirmvl.mp4",
+      "https://res.cloudinary.com/dhv8nf1wd/video/upload/v1775399381/mug02_y9fj2b.mp4",
+      "https://res.cloudinary.com/dhv8nf1wd/video/upload/v1775399584/mojito_01_cvskls.mp4",
+      "https://res.cloudinary.com/dhv8nf1wd/video/upload/v1775406344/LOT_de_4_visage_v01_lkbqz8.mp4",
+      "https://res.cloudinary.com/dhv8nf1wd/video/upload/v1775408254/la_cigale_02_ws94ri.mp4",
+      "https://res.cloudinary.com/dhv8nf1wd/video/upload/v1775413842/la_cigale_01_s5fzz4.mp4",
+      "https://res.cloudinary.com/dhv8nf1wd/video/upload/v1775414177/images_honey_ons_wbsk4n.mp4",
+      "https://player.cloudinary.com/embed/?cloud_name=dhv8nf1wd&public_id=dar_mrad_plats_znh9in",
+      "https://res.cloudinary.com/dhv8nf1wd/video/upload/v1775422394/04_petit_dej_v7g3ed.mp4",
+      "https://res.cloudinary.com/dhv8nf1wd/video/upload/v1775422811/3_love_ei8x4a.mp4",
+      "https://res.cloudinary.com/dhv8nf1wd/video/upload/v1775422962/03_gateaux_vioz1f.mp4",
+      "https://res.cloudinary.com/dhv8nf1wd/video/upload/v1775423039/03_art_facial_s5oxtk.mp4",
+      "https://res.cloudinary.com/dhv8nf1wd/video/upload/v1775423226/02_petit_dej_locca_bonheur_02_xqf4mc.mp4",
+      "https://res.cloudinary.com/dhv8nf1wd/video/upload/v1775423341/01_AMAZIGH_HAPPY_FRIDAY_nfypr8.mp4"
+    ]
+  },
   "portraits.html": {
     folder: "images/photography/portraits",
     titlePrefix: "Portrait",
@@ -131,13 +177,63 @@
       "IMG_3467.jpg",
       "IMG_8956.jpg"
     ]
+  },
+  "event-recaps-videography.html": {
+    titlePrefix: "Event Recap",
+    mediaType: "video",
+    files: [
+      "https://player.cloudinary.com/embed/?cloud_name=dhv8nf1wd&public_id=trend_011_put3l0",
+      "https://res.cloudinary.com/dhv8nf1wd/video/upload/v1774585785/tayara_intro_outro_ku2re1.mp4",
+      "https://player.cloudinary.com/embed/?cloud_name=dhv8nf1wd&public_id=Split_5_FCT_2024_kvf4ej",
+      "https://player.cloudinary.com/embed/?cloud_name=dhv8nf1wd&public_id=Split_5_FCT_2024_vsyvyv",
+      "https://player.cloudinary.com/embed/?cloud_name=dhv8nf1wd&public_id=Split_1_FCT_2024_ndvb7d",
+      "https://res.cloudinary.com/dhv8nf1wd/video/upload/v1774632651/ksar_zahra_fmbfks.mp4",
+      "https://res.cloudinary.com/dhv8nf1wd/video/upload/v1774626921/Spot_officiel_FCT_2024_gibkmr.mp4"
+    ]
   }
 };
 
 const currentPage = window.location.pathname.split("/").pop() || "photography.html";
 const activeGallery = galleryConfigs[currentPage] || galleryConfigs["photography.html"];
 
-const slides = activeGallery.files.map((fileName, index) => ({
+function getMediaDedupKey(fileName) {
+  if (!/^https?:\/\//i.test(fileName)) {
+    return `local:${fileName.toLowerCase()}`;
+  }
+
+  try {
+    const url = new URL(fileName);
+    const isCloudinaryEmbed = /^player\.cloudinary\.com$/i.test(url.hostname) && /\/embed\//i.test(url.pathname);
+
+    if (isCloudinaryEmbed) {
+      const cloudName = (url.searchParams.get("cloud_name") || "").toLowerCase();
+      const publicId = decodeURIComponent(url.searchParams.get("public_id") || "").toLowerCase();
+      return `cld:${cloudName}:${publicId}`;
+    }
+
+    return `url:${url.origin.toLowerCase()}${url.pathname.toLowerCase()}`;
+  } catch (_error) {
+    return `raw:${String(fileName).toLowerCase()}`;
+  }
+}
+
+function dedupeFiles(fileList) {
+  const seen = new Set();
+  return fileList.filter((fileName) => {
+    const key = getMediaDedupKey(fileName);
+    if (seen.has(key)) {
+      return false;
+    }
+    seen.add(key);
+    return true;
+  });
+}
+
+const filesForSlides = currentPage === "event-recaps-videography.html"
+  ? dedupeFiles(activeGallery.files)
+  : activeGallery.files;
+
+const slides = filesForSlides.map((fileName, index) => ({
   title: `${activeGallery.titlePrefix} ${index + 1}`,
   description: "Voir photo",
   src: /^https?:\/\//i.test(fileName) ? fileName : `${activeGallery.folder}/${fileName}`,
@@ -224,6 +320,14 @@ function getCloudinaryEmbedSrc(src, autoplay) {
   } catch (_error) {
     return src;
   }
+}
+
+function getVideoPreviewTime(video) {
+  const fallback = 0.12;
+  if (!Number.isFinite(video.duration) || video.duration <= 0) {
+    return fallback;
+  }
+  return Math.min(fallback, Math.max(0, video.duration - 0.02));
 }
 
 const coverflow = document.getElementById("coverflow");
@@ -377,33 +481,92 @@ function createSlide(slide, index) {
   if (slide.mediaType === "video") {
     const playbackSrc = getCloudinaryDirectVideoSrc(slide.src, "card");
     const posterSrc = getCloudinaryPosterSrc(slide.src);
+    const coverPoster = posterSrc ? document.createElement("img") : null;
+    if (coverPoster) {
+      coverPoster.className = "video-poster";
+      coverPoster.alt = slide.title;
+      coverPoster.loading = "eager";
+      coverPoster.src = posterSrc;
+      cover.appendChild(coverPoster);
+    }
 
     const video = document.createElement("video");
+    video.className = "cover-video-media";
     video.dataset.src = encodeURI(playbackSrc);
     video.muted = true;
     video.defaultMuted = true;
     video.loop = true;
     video.playsInline = true;
-    video.preload = "none";
+    video.preload = "metadata";
     video.setAttribute("playsinline", "");
     video.setAttribute("webkit-playsinline", "true");
     if (posterSrc) {
       video.poster = posterSrc;
     }
+    video.addEventListener("loadeddata", () => {
+      video.classList.add("is-ready");
+      if (coverPoster) {
+        coverPoster.classList.add("is-hidden");
+      }
+      const previewTime = getVideoPreviewTime(video);
+      if (Math.abs(video.currentTime - previewTime) > 0.01) {
+        try {
+          video.currentTime = previewTime;
+        } catch (_error) {
+          // Ignore seek errors while metadata is stabilizing.
+        }
+      }
+    });
+    video.addEventListener("error", () => {
+      video.classList.remove("is-ready");
+      if (coverPoster) {
+        coverPoster.classList.remove("is-hidden");
+      }
+    });
     cover.appendChild(video);
 
+    const reflectionPoster = posterSrc ? document.createElement("img") : null;
+    if (reflectionPoster) {
+      reflectionPoster.className = "video-poster reflection-video-poster";
+      reflectionPoster.alt = "";
+      reflectionPoster.loading = "eager";
+      reflectionPoster.src = posterSrc;
+      reflection.appendChild(reflectionPoster);
+    }
+
     const reflectionVideo = document.createElement("video");
+    reflectionVideo.className = "reflection-video-media";
     reflectionVideo.dataset.src = encodeURI(playbackSrc);
     reflectionVideo.muted = true;
     reflectionVideo.defaultMuted = true;
     reflectionVideo.loop = true;
     reflectionVideo.playsInline = true;
-    reflectionVideo.preload = "none";
+    reflectionVideo.preload = "metadata";
     reflectionVideo.setAttribute("playsinline", "");
     reflectionVideo.setAttribute("webkit-playsinline", "true");
     if (posterSrc) {
       reflectionVideo.poster = posterSrc;
     }
+    reflectionVideo.addEventListener("loadeddata", () => {
+      reflectionVideo.classList.add("is-ready");
+      if (reflectionPoster) {
+        reflectionPoster.classList.add("is-hidden");
+      }
+      const previewTime = getVideoPreviewTime(reflectionVideo);
+      if (Math.abs(reflectionVideo.currentTime - previewTime) > 0.01) {
+        try {
+          reflectionVideo.currentTime = previewTime;
+        } catch (_error) {
+          // Ignore seek errors while metadata is stabilizing.
+        }
+      }
+    });
+    reflectionVideo.addEventListener("error", () => {
+      reflectionVideo.classList.remove("is-ready");
+      if (reflectionPoster) {
+        reflectionPoster.classList.remove("is-hidden");
+      }
+    });
     reflection.appendChild(reflectionVideo);
   } else {
     const image = document.createElement("img");
@@ -482,6 +645,7 @@ function update() {
     item.style.transform = `translate(-50%, -50%) translateX(${x}px) translateZ(${z}px) rotateY(${rotateY}deg) scale(${scale})`;
     item.style.opacity = opacity;
     item.style.zIndex = String(120 - abs);
+    item.classList.toggle("is-front", abs === 0);
 
     const reflection = item.querySelector(".reflection");
     if (reflection) {
@@ -497,21 +661,41 @@ function update() {
 
       if (shouldKeepLoaded) {
         if (!video.src && video.dataset.src) {
+          video.classList.remove("is-ready");
+          const coverPoster = item.querySelector(".cover .video-poster");
+          if (coverPoster) {
+            coverPoster.classList.remove("is-hidden");
+          }
           video.src = video.dataset.src;
           video.load();
         }
         if (reflectionVideo && !reflectionVideo.src && reflectionVideo.dataset.src) {
+          reflectionVideo.classList.remove("is-ready");
+          const reflectionPoster = item.querySelector(".reflection .video-poster");
+          if (reflectionPoster) {
+            reflectionPoster.classList.remove("is-hidden");
+          }
           reflectionVideo.src = reflectionVideo.dataset.src;
           reflectionVideo.load();
         }
       } else {
         video.pause();
+        video.classList.remove("is-ready");
+        const coverPoster = item.querySelector(".cover .video-poster");
+        if (coverPoster) {
+          coverPoster.classList.remove("is-hidden");
+        }
         if (video.src) {
           video.removeAttribute("src");
           video.load();
         }
         if (reflectionVideo) {
           reflectionVideo.pause();
+          reflectionVideo.classList.remove("is-ready");
+          const reflectionPoster = item.querySelector(".reflection .video-poster");
+          if (reflectionPoster) {
+            reflectionPoster.classList.remove("is-hidden");
+          }
           if (reflectionVideo.src) {
             reflectionVideo.removeAttribute("src");
             reflectionVideo.load();

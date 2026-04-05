@@ -440,7 +440,7 @@ function filterGallery(category, btn) {
          item.style.display = 'none';
          if (video) {
             video.pause();
-            video.currentTime = 0;
+            seekToGalleryPreviewFrame(video);
          }
          item.classList.remove('is-playing');
       }
@@ -496,20 +496,83 @@ function switchSkillsPane(btn, paneId) {
 
 function startGalleryPreview(item, video) {
    item.classList.add('is-playing');
-   video.currentTime = 0;
+   seekToGalleryPreviewFrame(video);
    video.play().catch(() => {
       // Playback can fail depending on browser policy.
    });
 }
 
+const galleryPreviewTime = 0.12;
+
+function getCloudinaryPosterFromVideoSource(src) {
+   if (!src || !/^https?:\/\//i.test(src)) return '';
+
+   try {
+      if (/^https?:\/\/res\.cloudinary\.com\//i.test(src) && /\/video\/upload\//i.test(src)) {
+         return src
+            .replace(/\/video\/upload\//i, '/video/upload/f_auto,q_auto:good,so_0/')
+            .replace(/\.mp4(\?.*)?$/i, '.jpg');
+      }
+
+      if (!/^https?:\/\/player\.cloudinary\.com\/embed\//i.test(src)) {
+         return '';
+      }
+
+      const url = new URL(src);
+      const cloudName = url.searchParams.get('cloud_name');
+      const publicId = url.searchParams.get('public_id');
+      if (!cloudName || !publicId) return '';
+
+      const normalizedPublicId = decodeURIComponent(publicId)
+         .split('/')
+         .map((segment) => encodeURIComponent(segment))
+         .join('/');
+
+      return `https://res.cloudinary.com/${encodeURIComponent(cloudName)}/video/upload/f_auto,q_auto:good,so_0/${normalizedPublicId}.jpg`;
+   } catch (_error) {
+      return '';
+   }
+}
+
+function seekToGalleryPreviewFrame(video) {
+   const duration = Number.isFinite(video.duration) ? video.duration : 0;
+   const targetTime = duration > 0 ? Math.min(galleryPreviewTime, Math.max(0, duration - 0.02)) : galleryPreviewTime;
+   try {
+      if (Math.abs(video.currentTime - targetTime) > 0.01) {
+         video.currentTime = targetTime;
+      }
+   } catch (_error) {
+      // Ignore seek timing errors when metadata is not ready.
+   }
+}
+
+function applyGalleryPoster(video) {
+   if (!video || video.poster) return;
+   const source = video.querySelector('source');
+   const sourceUrl = source?.src || video.currentSrc || video.src || '';
+   const poster = getCloudinaryPosterFromVideoSource(sourceUrl);
+   if (poster) {
+      video.poster = poster;
+   }
+}
+
 function stopGalleryPreview(item, video) {
    item.classList.remove('is-playing');
    video.pause();
-   video.currentTime = 0;
+   seekToGalleryPreviewFrame(video);
 }
 
 function primeGalleryVideo(video) {
+   applyGalleryPoster(video);
    video.preload = 'auto';
+
+   if (video.readyState >= 1) {
+      seekToGalleryPreviewFrame(video);
+   } else {
+      video.addEventListener('loadedmetadata', () => {
+         seekToGalleryPreviewFrame(video);
+      }, { once: true });
+   }
 
    if (video.readyState < 2) {
       video.load();
@@ -520,9 +583,7 @@ function primeGalleryVideo(video) {
       playAttempt
          .then(() => {
             video.pause();
-            if (video.currentTime < 0.01) {
-               video.currentTime = 0.01;
-            }
+            seekToGalleryPreviewFrame(video);
          })
          .catch(() => {
             // Some browsers block non-user initiated playback.
@@ -550,12 +611,14 @@ document.querySelectorAll('.gallery-item').forEach((item) => {
       video.defaultMuted = true;
       video.loop = true;
       video.playsInline = true;
+      video.preload = 'metadata';
       video.setAttribute('playsinline', '');
       video.setAttribute('webkit-playsinline', 'true');
+      applyGalleryPoster(video);
 
       video.addEventListener('loadeddata', () => {
          video.pause();
-         video.currentTime = 0;
+         seekToGalleryPreviewFrame(video);
       });
 
       if (!isTouchLikeDevice) {

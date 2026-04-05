@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Header 3D Coverflow</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600&family=Syne:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="header-coverflow.css" />
+</head>
+<body>
+  <div class="ambient-bg">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+  <div class="grid-overlay"></div>
+
+  <header class="hero-header">
+    <a class="back-link" href="index.html#gallery">← Back</a>
+
+    <div class="hero-info">
+      <h1 id="hero-title">Mountain Landscape</h1>
+      <p id="hero-description">Majestic peaks covered in snow during golden hour</p>
+    </div>
+
+    <div class="coverflow-container" tabindex="0" aria-label="Galerie coverflow">
+      <div class="coverflow" id="coverflow"></div>
+
+      <button class="nav-button prev" id="prevBtn" aria-label="Image précédente">‹</button>
+      <button class="nav-button next" id="nextBtn" aria-label="Image suivante">›</button>
+
+      <div class="dots-container" id="dots"></div>
+    </div>
+  </header>
+
+  <script src="header-coverflow.js"></script>
+</body>
+</html>
