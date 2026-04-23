@@ -365,6 +365,8 @@ body.video-popup-open {
 	letter-spacing: 6px;
 	margin-bottom: 12px;
 	color: #ffffff;
+	-webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.92);
+	text-shadow: 0 2px 10px rgba(0, 0, 0, 0.28), 0 0 2px rgba(255, 255, 255, 0.35);
 	background: var(--title-gradient);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
